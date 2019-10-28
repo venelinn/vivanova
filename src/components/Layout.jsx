@@ -23,10 +23,9 @@ class Layout extends Component {
   constructor(props) {
     super(props);
     this.children = this.props.children;
-    const data = this.props.data;
     const location = this.props.location;
     const url = location.pathname;
-    const { langs, defaultLangKey } = data.site.siteMetadata.languages;
+    const { langs, defaultLangKey } = this.props.data.site.siteMetadata.languages;
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     this.homeLink = `/${this.langKey}/`;
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
@@ -36,7 +35,7 @@ class Layout extends Component {
     this.i18nMessages = require(`../data/messages/${this.langKey}`);
   }
   render() {
-    console.log(this.props.data);
+    //console.log(this.props.data.site.siteMetadata.languages);
     return (
       <IntlProvider
         locale={this.langKey}
