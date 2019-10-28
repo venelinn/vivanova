@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from "prop-types"
+//import PropTypes from "prop-types"
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import 'intl';
@@ -13,17 +13,11 @@ import "../styles/style.scss"
 
 addLocaleData([...en, ...de]);
 
-// if (typeof window !== 'undefined') {
-//   // Make scroll behavior of internal links smooth
-//   // eslint-disable-next-line global-require
-//   require('smooth-scroll')('.jsSmoothScroll');
-// }
-
-const Layout1 = ({ children }) => (
-  <>
-    { children }
-  </>
-)
+if (typeof window !== 'undefined') {
+  // Make scroll behavior of internal links smooth
+  // eslint-disable-next-line global-require
+  require('smooth-scroll')('.jsSmoothScroll');
+}
 
 class Layout extends Component {
   constructor(props) {
@@ -36,13 +30,13 @@ class Layout extends Component {
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     this.homeLink = `/${this.langKey}/`;
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
-
     // get the appropriate message file based on langKey
     // at the moment this assumes that langKey will provide us
     // with the appropriate language code
     this.i18nMessages = require(`../data/messages/${this.langKey}`);
   }
   render() {
+    console.log(this.props.data);
     return (
       <IntlProvider
         locale={this.langKey}

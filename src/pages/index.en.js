@@ -11,7 +11,7 @@ import Header from '../components/Header';
 import About from '../components/About';
 // import Portfolio from '../components/Portfolio';
 // import Resume from '../components/Resume';
-// import Contacts from '../components/Contacts';
+import Contacts from '../components/Contacts';
 import Footer from '../components/Footer';
 
 class IndexPage extends React.Component {
@@ -45,8 +45,8 @@ class IndexPage extends React.Component {
             )}
             {section.__typename === 'ContentfulExperienceList' && (
               <Resume key={section.id} jobs={section.modules} />
-            )}
-            {section.__typename === 'ContentfulContacts' && <Contacts />} */}
+            )}*/}
+            {section.__typename === 'ContentfulContacts' && <Contacts />}
           </Section>
         ))}
         <Footer />
@@ -108,12 +108,17 @@ export const query = graphql`
                 ... on ContentfulImage {
                   title
                   image {
-                    fluid(maxWidth: 1400, quality: 90) {
+                    fluid(maxWidth: 800, quality: 80) {
                       ...GatsbyContentfulFluid_withWebp_noBase64
                     }
                   }
                 }
               }
+            }
+            ... on ContentfulContacts {
+              title
+              description
+              slug
             }
           }
         }
