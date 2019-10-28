@@ -1,0 +1,39 @@
+.intro__social__root {
+  position: relative;
+  padding: .5rem 0 2rem;
+}
+
+.intro__social {
+	display: flex;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	justify-content: center;
+	li {
+		display: inline-block;
+		margin: 0 1rem;
+		padding: 0;
+	}
+	a {
+		color: rgba(255, 255, 255, 0.8);
+		fill: rgba(255, 255, 255, 0.8);
+		&:hover,
+		&:focus {
+			color: var(--base-color);
+			fill: var(--base-color);
+		}
+	}
+	svg {
+		fill: inherit;
+    width: 2rem;
+    height: 2rem;
+  	@include breakpoint($smedium + 1) {
+			width: 2rem;
+	    height: 2rem;
+    }
+    @include breakpoint(0 $smedium) {
+    	width: 1.5rem;
+    	height: 1.5rem;
+    }
+	}
+}
