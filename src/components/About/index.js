@@ -16,6 +16,7 @@ const About = props => {
         }}
       />
         <Img
+          className='about__img'
           fluid={props.about.modules[0].image.fluid}
           title={props.about.title}
         />

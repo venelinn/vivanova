@@ -23,19 +23,19 @@ class Layout extends Component {
   constructor(props) {
     super(props);
     this.children = this.props.children;
-    const location = this.props.location;
-    const url = location.pathname;
+    //const location = this.props.location;
+    //const url = location.pathname;
     const { langs, defaultLangKey } = this.props.data.site.siteMetadata.languages;
-    this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
+    this.langKey = getCurrentLangKey(langs, defaultLangKey, this.props.location.pathname);
     this.homeLink = `/${this.langKey}/`;
-    this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
+    this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, this.props.location.pathname));
     // get the appropriate message file based on langKey
     // at the moment this assumes that langKey will provide us
     // with the appropriate language code
     this.i18nMessages = require(`../data/messages/${this.langKey}`);
   }
   render() {
-    //console.log(this.props.data.site.siteMetadata.languages);
+    console.log(this.props.data.site.siteMetadata);
     return (
       <IntlProvider
         locale={this.langKey}
