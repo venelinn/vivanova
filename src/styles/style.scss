@@ -53,10 +53,10 @@ h2 {
 }
 
 h3 {
-	@include breakpoint($smedium + 1) {
+	@media (min-width: $smedium + 1) {
 		font-size: 2rem;
 	}
-	@include breakpoint(0 $smedium) {
+	@media (max-width: $smedium) {
 		font-size: 1.5rem;
 	}
 }

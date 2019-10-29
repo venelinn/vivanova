@@ -12,12 +12,12 @@
 }
 
 .about__intro {
-   max-width: var(--page-max-width);
-	@include breakpoint($smedium + 1) {
-		margin: 1rem auto 4rem;
+  max-width: var(--page-max-width);
+  @media (min-width: $smedium + 1) {
+    margin: 1rem auto 4rem;
   }
-  @include breakpoint(0 $smedium) {
-   	margin: 1rem auto 3rem;
+	@media (max-width: $smedium) {
+    margin: 1rem auto 3rem;
   }
   h4 {
 		 margin-bottom: 0px;
@@ -40,7 +40,7 @@
 }
 
 .about__img {
-	@media (min-width: $medium) {
+	@media (min-width: $medium + 1) {
 		max-width: 800px;
 		margin: 0 auto;
 	}

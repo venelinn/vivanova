@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import Layout from '../components/Layout';
-import SEO from '../components/Seo';
 import GlobalStyle from '../styles/global';
 import Section from '../components/Section';
 
@@ -17,16 +16,12 @@ import Footer from '../components/Footer';
 class IndexPage extends React.Component {
   render() {
     const sections = this.props.data.sectionsData.edges[0].node;
-    const intro = this.props.data.headerData;
+    const intro = this.props.data.headerDataEn;
     //sections.modules.forEach( i => console.log(i));
+    //console.log(this.props.location);
     return (
       <Layout data={this.props.data} location={this.props.location}>
-        <SEO
-          title={'Vivanova.eu'}
-          keywords={[
-            `architect`
-          ]}
-        />
+
         <GlobalStyle />
         <Header header={intro} />
         {sections.modules.map((section, index) => (
@@ -63,7 +58,7 @@ IndexPage.propTypes = {
 };
 
 export const query = graphql`
-  query Index {
+  query PageEnQuery {
     site {
       siteMetadata {
         languages {
@@ -72,7 +67,7 @@ export const query = graphql`
         }
       }
     }
-    headerData: contentfulIntro {
+    headerDataEn: contentfulIntro(node_locale: {eq: "en-US"}) {
       title
       node_locale
       description

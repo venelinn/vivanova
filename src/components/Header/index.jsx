@@ -1,6 +1,5 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-//import { CSSTransition } from 'react-transition-group';
 import Hero from '../Hero';
 import Social from './Social';
 import Menu from './Hamburger';
@@ -14,14 +13,27 @@ const Header = props => {
       <Hero data={props.header.modules[0]} />
       <div className={styles.intro__content}>
         <Fade duration={1000} delay={300}>
-          <span className={styles.intro__msg}>{props.header.sectionTitle}</span>
+          <span className={styles.intro__msg}>{props.header.description}</span>
         </Fade>
         <Fade duration={2000} delay={400}>
           <h1>{props.header.title}</h1>
         </Fade>
         <Fade duration={1000} delay={500}>
-          <p className={styles.intro__position}>{props.header.description}</p>
+          <p className={styles.intro__position}>{props.header.sectionTitle}</p>
         </Fade>
+        <Fade duration={2000} delay={800}>
+          <ul className={`${styles.intro__cta} btn__group`}>
+            <li>
+              <a
+                className='button jsSmoothScroll'
+                href='#about'
+                title='More About Venelin'
+              >
+                About Me
+              </a>
+            </li>
+          </ul>
+          </Fade>
       </div>
       <Fade duration={1500} delay={1000}>
       <Social />

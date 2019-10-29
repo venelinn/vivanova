@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-//import PropTypes from "prop-types"
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import 'intl';
@@ -23,19 +22,21 @@ class Layout extends Component {
   constructor(props) {
     super(props);
     this.children = this.props.children;
-    //const location = this.props.location;
-    //const url = location.pathname;
+    //const data = this.props.data;
+    const location = this.props.location;
+    const url = location.pathname;
     const { langs, defaultLangKey } = this.props.data.site.siteMetadata.languages;
-    this.langKey = getCurrentLangKey(langs, defaultLangKey, this.props.location.pathname);
+    this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
+    //this.langKey = 'en';
     this.homeLink = `/${this.langKey}/`;
-    this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, this.props.location.pathname));
+    this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
     // get the appropriate message file based on langKey
     // at the moment this assumes that langKey will provide us
     // with the appropriate language code
     this.i18nMessages = require(`../data/messages/${this.langKey}`);
   }
   render() {
-    console.log(this.props.data.site.siteMetadata);
+    console.log(this.props.data.site.siteMetadata.languages);
     return (
       <IntlProvider
         locale={this.langKey}

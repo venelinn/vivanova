@@ -27,11 +27,11 @@
 		fill: inherit;
     width: 2rem;
     height: 2rem;
-  	@include breakpoint($smedium + 1) {
+  	@media (min-width: $smedium + 1) {
 			width: 2rem;
 	    height: 2rem;
     }
-    @include breakpoint(0 $smedium) {
+    @media (max-width: $smedium) {
     	width: 1.5rem;
     	height: 1.5rem;
     }

@@ -2,6 +2,8 @@ import React from 'react';
 import { graphql, navigate, withPrefix } from 'gatsby'
 import { getUserLangKey } from 'ptz-i18n';
 
+import SEO from '../components/Seo';
+
 class RedirectIndex extends React.PureComponent {
   constructor(args) {
     super(args);
@@ -14,6 +16,16 @@ class RedirectIndex extends React.PureComponent {
       //console.log(args.data.site.siteMetadata.languages);
       navigate(homeUrl);
     }
+  }
+  render() {
+    return (
+      <SEO
+        title={'Vivanova.eu'}
+        keywords={[
+          `architect`
+        ]}
+      />
+    );
   }
 }
 
