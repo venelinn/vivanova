@@ -2,7 +2,7 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 import Hero from '../Hero';
 import Social from './Social';
-import Menu from './Hamburger';
+//import TopNav from './Nav';
 import styles from './index.module.scss';
 
 import './header.scss';
@@ -11,6 +11,7 @@ const Header = props => {
   return (
     <section className={`${styles.intro} ${styles.introGradient}`}>
       <Hero data={props.header.modules[0]} />
+      {/* <TopNav locale={props.locale} langsMenu={props.langsMenu} /> */}
       <div className={styles.intro__content}>
         <Fade duration={1000} delay={300}>
           <span className={styles.intro__msg}>{props.header.description}</span>
@@ -38,7 +39,6 @@ const Header = props => {
       <Fade duration={1500} delay={1000}>
       <Social />
       </Fade>
-      <Menu />
     </section>
   );
 };

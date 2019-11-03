@@ -66,50 +66,15 @@
 
 // FONTS
 
-@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
-	$src: null;
-	$src1: null;
-	$haseot: null;
-
-	$extmods: (
-		eot: "?#iefix",
-		svg: "#" + str-replace($name, " ", "_")
-	);
-
-	$formats: (
-		eot: "embedded-opentype",
-		otf: "opentype",
-		ttf: "truetype"
-	);
-
-	@each $ext in $exts {
-		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
-		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
-		@if $ext == "eot" {
-			$haseot: true;
-			$src1: append($src, url(quote($path + "." + $ext)));
-		}
-		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
-	}
-
-	@if $haseot {
-		@font-face {
-			font-family: quote($name);
-			font-style: $style;
-			font-weight: $weight;
-			src: $src1;
-			src: $src;
-      font-display: optional;
-		}
-	} @else {
-		@font-face {
-			font-family: quote($name);
-			font-style: $style;
-			font-weight: $weight;
-			src: $src;
-      font-display: optional;
-		}
-	}
+@mixin font-face($family, $file, $weight : normal, $style : normal) {
+	font-family: $family;
+    src: url(#{$file}.eot);
+    src: url(#{$file}.eot?#iefix) format('embedded-opentype'),
+         url(#{$file}.woff) format('woff'),
+         url(#{$file}.ttf) format('truetype'),
+         url(#{$file}.svg##{$family}) format('svg');
+    font-weight: $weight;
+    font-style: $style;
 }
 
 @mixin placeholder {

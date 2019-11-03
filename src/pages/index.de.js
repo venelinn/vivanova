@@ -21,9 +21,8 @@ const propTypes = {
 
 class IndexPageEn extends React.Component {
   render() {
-    const intro = this.props.data.headerDataEn;
-    const sections = this.props.data.sectionsDataEn.edges[0].node;
-    console.log(this.props);
+    const intro = this.props.data.headerDataDe;
+    const sections = this.props.data.sectionsDataDe.edges[0].node;
     return (
       <Layout data={this.props.data} location={this.props.location}>
         <GlobalStyle />
@@ -59,7 +58,7 @@ IndexPageEn.propTypes = propTypes
 export default IndexPageEn
 
 export const query = graphql`
-  query PageEnQuery {
+  query PageDeQuery {
     site {
       siteMetadata {
         languages {
@@ -68,7 +67,7 @@ export const query = graphql`
         }
       }
     }
-    headerDataEn: contentfulIntro(node_locale: {eq: "en-US"}) {
+    headerDataDe: contentfulIntro(node_locale: {eq: "de-DE"}) {
       title
       node_locale
       description
@@ -85,7 +84,7 @@ export const query = graphql`
         }
       }
     }
-    sectionsDataEn: allContentfulModules(filter: { node_locale: { eq: "en-US" } }) {
+    sectionsDataDe: allContentfulModules(filter: { node_locale: { eq: "de-DE" } }) {
       edges {
         node {
           id

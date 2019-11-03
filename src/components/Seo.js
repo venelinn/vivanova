@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
 
+import image from '../images/share.jpg'
+
 function SEO({ description, lang, meta, keywords, title }) {
   return (
     <StaticQuery
@@ -31,6 +33,18 @@ function SEO({ description, lang, meta, keywords, title }) {
                 content: metaDescription,
               },
               {
+                property: `og:image`,
+                content: data.site.siteMetadata.siteUrl + image,
+              },
+              {
+                property: `og:image:width`,
+                content: data.site.siteMetadata.imageWidth,
+              },
+              {
+                property: `og:image:height`,
+                content: data.site.siteMetadata.imageHeight,
+              },
+              {
                 property: `og:type`,
                 content: `website`,
               },
@@ -50,16 +64,20 @@ function SEO({ description, lang, meta, keywords, title }) {
                 name: `twitter:description`,
                 content: metaDescription,
               },
+              {
+                name: `fb:app_id`,
+                content: data.site.siteMetadata.fbId,
+              },
             ]
-            .concat(
-              keywords.length > 0
-                ? {
-                  name: `keywords`,
-                  content: keywords.join(`, `),
-                  }
-                : []
-            )
-            .concat(meta)}
+              .concat(
+                keywords.length > 0
+                  ? {
+                      name: `keywords`,
+                      content: keywords.join(`, `),
+                    }
+                  : []
+              )
+              .concat(meta)}
           />
         )
       }}
@@ -68,7 +86,7 @@ function SEO({ description, lang, meta, keywords, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `ja`,
   meta: [],
   keywords: [],
 }
@@ -87,9 +105,13 @@ const detailsQuery = graphql`
   query DefaultSEOQuery {
     site {
       siteMetadata {
+        siteUrl
         title
         description
         author
+        fbId
+        imageWidth
+        imageHeight
       }
     }
   }

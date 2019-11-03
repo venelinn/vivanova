@@ -1,11 +1,11 @@
 module.exports = {
   'selectLanguage': 'DE Select your language',
-  'products': 'Produits',
-  'recipes': 'Recettes',
-  'viewall': 'Tout Voir',
-  'shareBar': 'Barre de partage',
-  'shareFacebook': 'Partage Facebook',
-  'shareTwitter': 'Partage Twitter',
-  'sharePinterest': 'Partage Pinterest',
-  'copyLink': 'Copier le lien',
+  'products': 'Products',
+  'recipes': 'Recipes',
+  'viewall': 'View All',
+  'shareBar': 'Share bar',
+  'shareFacebook': 'Share on Facebook',
+  'shareTwitter': 'Share on Twitter',
+  'sharePinterest': 'Share on Pinterest',
+  'copyLink': 'Copy link'
 };

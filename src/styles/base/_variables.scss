@@ -3,7 +3,7 @@
 // ==========================================================================
 // Generic
 // ==========================================================================
-$prefix: 'ven';
+$prefix: 'liberte';
 $pageBackground: #f1f1f1 !default;
 $radius: 3px;
 $sidebar: 360px !default;
@@ -18,11 +18,15 @@ $pageMaxWidth: 850px !default;
 // ==========================================================================
 
 $baseFont: 90%;
-$bodyFont: 'Jost', serif;
+$proxima: "proxima-nova",sans-serif;
+$bodyFont: $proxima;
+$avant-garde-bold: "AvantGardeGothicITCW01Bd", sans-serif;
+$avant-garde-book: "AvantGardeGothicITCW01Bk", sans-serif;
+$museo: "museo_sans700", Times New Roman;
 $light: 100 !default;
-$regular: 100 !default;
+$regular: 300 !default;
 $normal: $regular;
-$bold: 300 !default;
+$bold: 600 !default;
 $xbold: 600 !default;
 
 // ==========================================================================
@@ -48,3 +52,31 @@ $breakpoints: (
   "retina" : min-resolution 1.5dppx,
   "print" : $print
 );
+
+
+// Colors
+$white:#FFFFFF;
+$black:#000000;
+$mineshaft: #333;
+$gray:#777;
+$light-gray:#e8e8ea;
+
+$liberte-blue:#0E7AB6;
+
+//$ease : cubic-bezier(0.190, 1.000, 0.220, 1.000);
+$ease : ease;
+
+// Layout
+$columns:12; // Number of columns
+$layout_width:1210px; // In pixels
+$gutter_width:24px; // In pixels
+
+
+$mq-mobile:600px;
+$mq-tablet:768px;
+$mq-default:$layout_width;
+$mq-large:1200px;
+$mq-infinite:9999999px;
+
+$brickCountPerRequest: 8;
+$brickAnimationDelay: 0.1;

@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, navigate, withPrefix } from 'gatsby'
 import { getUserLangKey } from 'ptz-i18n';
 
-import SEO from '../components/Seo';
+import SEO from "../components/seo"
 
 class RedirectIndex extends React.PureComponent {
   constructor(args) {
@@ -17,15 +17,9 @@ class RedirectIndex extends React.PureComponent {
       navigate(homeUrl);
     }
   }
+
   render() {
-    return (
-      <SEO
-        title={'Vivanova.eu'}
-        keywords={[
-          `architect`
-        ]}
-      />
-    );
+    return (<SEO title="Victoria Ivanova" />);
   }
 }
 
