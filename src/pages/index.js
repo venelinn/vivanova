@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, navigate, withPrefix } from 'gatsby'
 import { getUserLangKey } from 'ptz-i18n';
 
-import SEO from "../components/seo"
+import SEO from "../components/Seo"
 
 class RedirectIndex extends React.PureComponent {
   constructor(args) {
