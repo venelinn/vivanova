@@ -1,9 +1,12 @@
 .hamburger  {
-  position: fixed;
+  position: absolute;
   top: 2rem;
   right: 2rem;
   width: 40px;
   height: 40px;
+  @media (min-width: $medium + 1) {
+    display: none;
+  }
 
   .hbutton {
     transform: translate3d(-20px,-20px,0);

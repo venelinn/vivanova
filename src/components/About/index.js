@@ -1,7 +1,7 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade'
 import Img from 'gatsby-image'
-//import CTA from './cta';
+import Social from './Social';
 
 import './about.scss';
 
@@ -20,6 +20,7 @@ const About = props => {
           fluid={props.about.modules[0].image.fluid}
           title={props.about.title}
         />
+        <Social />
       </Fade>
     </>
   );

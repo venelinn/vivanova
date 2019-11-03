@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // import PropTypes from 'prop-types'
 // import Helmet from 'react-helmet'
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
+import TopBar from './TopBar';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import 'intl';
 
@@ -38,8 +39,10 @@ class Layout extends Component {
       <IntlProvider
         locale={this.langKey}
         messages={this.i18nMessages}
+
       >
         <main className="page">
+         <TopBar langsMenu={this.langsMenu} locale={this.langKey}  />
           {this.children}
         </main>
 

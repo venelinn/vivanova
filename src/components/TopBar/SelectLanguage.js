@@ -18,7 +18,7 @@ const SelectLanguage = (props) => {
       activeClassName="active"
       >
       <span selected={lang.selected}>
-        {lang.langKey === 'en' ? 'English' : 'Français'}
+        {lang.langKey}
       </span>
     </Link>
   );

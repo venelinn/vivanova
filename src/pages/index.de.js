@@ -26,7 +26,7 @@ class IndexPageEn extends React.Component {
     return (
       <Layout data={this.props.data} location={this.props.location}>
         <GlobalStyle />
-        <Header header={intro} />
+        <Header header={intro}  />
         {sections.modules.map((section, index) => (
           <Section
             key={index}

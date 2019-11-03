@@ -128,6 +128,21 @@ h3 {
   }
 }
 
+// -----------------------------------
+// NAVBAR
+// -----------------------------------
+.langbar {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  a {
+    &.active {
+      display: none;
+    }
+  }
+}
+
+
 /**
  * ===================================================================
  * Misc Helper Styles
@@ -235,4 +250,28 @@ button {
 	40% {
 		transform: scale(1);
 	}
+}
+
+// -----------------------------------
+// Accessibility
+// -----------------------------------
+
+.sr-only {
+	position:absolute;
+	width:1px;
+	height:1px;
+	padding:0;
+	margin:-1px;
+	overflow:hidden;
+	clip:rect(0,0,0,0);
+	border:0
+}
+
+.is-accessible {
+	border: 0;
+	height: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 0;
 }
