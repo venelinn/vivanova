@@ -1,11 +1,4 @@
 module.exports = {
   'selectLanguage': 'Select your language',
-  'products': 'Products',
-  'recipes': 'Recipes',
-  'viewall': 'View All',
-  'shareBar': 'Share bar',
-  'shareFacebook': 'Share on Facebook',
-  'shareTwitter': 'Share on Twitter',
-  'sharePinterest': 'Share on Pinterest',
-  'copyLink': 'Copy link'
+  'footerText': 'Built with Gatsby. I love you Mom!'
 };

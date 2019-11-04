@@ -14,10 +14,12 @@ const Header = props => {
           <span className={styles.intro__msg}>{props.header.description}</span>
         </Fade>
         <Fade duration={2000} delay={400}>
-          <h1>{props.header.title}</h1>
-        </Fade>
-        <Fade duration={1000} delay={500}>
-          <p className={styles.intro__position}>{props.header.sectionTitle}</p>
+          <div className="flip__text">
+            <h1 className="flip__text__container">
+              <span>{props.header.title}</span>
+              <span>{props.header.sectionTitle}</span>
+            </h1>
+          </div>
         </Fade>
         <Fade duration={2000} delay={800}>
           <ul className={`${styles.intro__cta} btn__group`}>
