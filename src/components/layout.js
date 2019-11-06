@@ -33,6 +33,7 @@ class Layout extends Component {
     // at the moment this assumes that langKey will provide us
     // with the appropriate language code
     this.i18nMessages = require(`../data/messages/${this.langKey}`);
+
   }
   render() {
     return (
@@ -42,7 +43,7 @@ class Layout extends Component {
 
       >
         <main className="page">
-         <TopBar langsMenu={this.langsMenu} locale={this.langKey}  />
+         <TopBar langsMenu={this.langsMenu} locale={this.langKey} menu={this.props.menu}  />
           {this.children}
         </main>
 

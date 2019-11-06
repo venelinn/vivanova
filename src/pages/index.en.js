@@ -24,9 +24,9 @@ class IndexPageEn extends React.Component {
     const intro = this.props.data.headerDataEn;
     const sections = this.props.data.sectionsDataEn.edges[0].node;
     return (
-      <Layout data={this.props.data} location={this.props.location}>
+      <Layout data={this.props.data} location={this.props.location} menu={sections.modules}>
         <GlobalStyle />
-        <Header header={intro}  />
+        <Header header={intro}   />
         {sections.modules.map((section, index) => (
           <Section
             key={index}
