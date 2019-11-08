@@ -5,6 +5,7 @@
   "version": "2.0.0",
   "author": "venelin.ca",
   "dependencies": {
+    "@browniebroke/gatsby-image-gallery": "^2.0.0",
     "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
     "@reach/dialog": "^0.2.9",
     "babel-plugin-styled-components": "^1.10.6",
