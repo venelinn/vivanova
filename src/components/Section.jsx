@@ -12,7 +12,9 @@ const Section = ({ children, className, title, description, ...props }) => (
     <div className={`${styles.inner}`}>
       <Fade delay={300}>
       <h2>{title}</h2>
-      <h3>{description}</h3>
+      {description ? (
+        <h3>{description}</h3>
+      ) : ''}
       </Fade>
     </div>
     {children}

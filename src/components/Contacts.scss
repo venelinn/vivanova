@@ -7,7 +7,7 @@
 		color: white;
 	}
 	.section-intro h5 {
-		color: var(--base-color);
+		color: var(--color-base);
 	}
 	form {
 		margin-top: 0;
@@ -46,11 +46,11 @@
 		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 		padding: 1.5rem 1rem;
 		&:focus {
-			border-color: var(--base-color);
+			border-color: var(--color-base);
 			color: #fff;
 		}
 		&.error {
-			border-bottom-color: var(--base-color);
+			border-bottom-color: var(--color-base);
 		}
 	}
 	span {
@@ -64,7 +64,7 @@
 		display: block;
 		letter-spacing: .2rem;
 		width: 100%;
-		background: var(--base-color);
+		background: var(--color-brand);
 		color: #fff;
 		text-transform: uppercase;
 		text-align: center;
@@ -72,7 +72,10 @@
 		border-radius: 44px;
 		transition: all 0.3s ease-in-out;
 		font-weight: bold;
-		padding: .5rem;
+    padding: .5rem;
+    span {
+      position: static;
+    }
 		&:hover,
 		&:focus {
 			background: #8b0000;
@@ -108,5 +111,5 @@
 	color: #FFFFFF;
 }
 .contact-info h5 {
-	color: var(--base-color);
+	color: var(--color-base);
 }

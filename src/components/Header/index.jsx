@@ -1,11 +1,13 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import Hero from '../Hero';
+import { FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
 
 import './header.scss';
 
 const Header = props => {
+  console.log(props.menu);
   return (
     <section className={`${styles.intro} ${styles.introGradient}`}>
       <Hero data={props.header.modules[0]} />
@@ -14,8 +16,8 @@ const Header = props => {
           <span className={styles.intro__msg}>{props.header.description}</span>
         </Fade>
         <Fade duration={2000} delay={400}>
-          <div className="flip__text">
-            <h1 className="flip__text__container">
+          <div>
+            <h1 className={styles.fade__text}>
               <span>{props.header.title}</span>
               <span>{props.header.sectionTitle}</span>
             </h1>
@@ -27,9 +29,9 @@ const Header = props => {
               <a
                 className='button jsSmoothScroll'
                 href='#about'
-                title='More About Me'
+                // title={`More ${<FormattedMessage id="aboutMe" />}`}
               >
-                About Me
+                <FormattedMessage id="aboutMe" />
               </a>
             </li>
           </ul>

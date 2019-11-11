@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade';
+import { FormattedMessage } from 'react-intl';
 //import 'whatwg-fetch'
 
 import "./Contacts.scss"
@@ -96,7 +97,7 @@ class Contacts extends React.Component {
           <Fade bottom>
           <p className="form-field">
             <label>
-              <span>Name</span>
+              <span><FormattedMessage id="formName" /></span>
               <input
                 value={this.state.name}
                 onChange={this.handleInputChange}
@@ -120,7 +121,7 @@ class Contacts extends React.Component {
           </p>
           <p className="form-field">
             <label>
-              <span>Message</span>
+              <span><FormattedMessage id="formMessage" /></span>
               <textarea
                 name="message"
                 placeholder="Message"
@@ -132,14 +133,11 @@ class Contacts extends React.Component {
             </label>
           </p>
           <p className="form-field">
-            <button className="submitform" type="submit">Send</button>
+            <button className="submitform" type="submit"><FormattedMessage id="formSend" /></button>
           </p>
           </Fade>
           <Modal visible={this.state.showModal}>
-            <p>
-              Thank you for reaching out. I will get back to you as soon as
-              possible.
-            </p>
+            <p><FormattedMessage id="formSuccess" /></p>
           </Modal>
         </Form>
       </div>

@@ -6,7 +6,6 @@ import { StaticQuery, graphql } from "gatsby"
 import image from '../images/share.jpg'
 
 function SEO({ description, lang, meta, keywords, title }) {
-  console.log(title);
   return (
     <StaticQuery
       query={detailsQuery}

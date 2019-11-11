@@ -20,7 +20,7 @@ const About = props => {
           fluid={props.about.modules[0].image.fluid}
           title={props.about.title}
         />
-        <Social />
+        <Social social={props.social} />
       </Fade>
     </>
   );

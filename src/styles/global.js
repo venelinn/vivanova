@@ -2,8 +2,9 @@ import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
   :root {
-    --base-color: #ff0100;
+    --color-brand: #e00000;
     --color-dark: #313131;
+    --color-base: var(--color-dark);
     --color-light: #444;
     --page-max-width: 1200px;
     --custom-ease-1: cubic-bezier(0.475,0.425,0,0.995);
@@ -16,5 +17,9 @@ export default createGlobalStyle`
     --color-primary-black-3: #171615;
     --color-primary-white: #fff;
     --body-font: 'Raleway', serif;
+    --fw-light: 100;
+    --fw-normal: 400;
+    --fw-regular: var(--fw-normal);
+    --fw-bold: 700;
   }
 `
