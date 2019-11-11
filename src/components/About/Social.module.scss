@@ -1,6 +1,5 @@
 .intro__social__root {
-  position: relative;
-  padding: .5rem 0 2rem;
+  padding: 1rem 0 0;
 }
 
 .intro__social {
@@ -15,16 +14,18 @@
 		padding: 0;
 	}
 	a {
-		color: rgba(255, 255, 255, 0.8);
-		fill: rgba(255, 255, 255, 0.8);
+    display: block;
+    transition: all .3s ease;
 		&:hover,
 		&:focus {
-			color: var(--base-color);
-			fill: var(--base-color);
+      svg {
+        fill: var(--color-brand);
+        opacity: 1;
+      }
 		}
-	}
-	svg {
-		fill: inherit;
+  }
+  svg {
+    opacity: .7;
     width: 2rem;
     height: 2rem;
   	@media (min-width: $smedium + 1) {

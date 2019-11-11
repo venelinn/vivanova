@@ -8,11 +8,12 @@
  .grid--about {
 	display: grid;
 	justify-items: center;
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 .about__intro {
   max-width: var(--page-max-width);
+  text-align: center;
   @media (min-width: $smedium + 1) {
     margin: 1rem auto 4rem;
   }

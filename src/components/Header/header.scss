@@ -10,38 +10,3 @@
 }
 
 
-
-.flip__text {
-	overflow: hidden;
-	height: var(--height);
-	margin: 1.5rem 0;
-	@media (min-width: $smedium + 1) {
-		--height: 60px;
-	}
-	@media (max-width: $smedium) {
-		--height: 35px;
-	}
-	&__container {
-		animation-name: change;
-		animation-duration: 6s;
-		animation-iteration-count: infinite;
-		font-size: var(--height);
-		text-transform: uppercase;
-	}
-	span {
-		display: block;
-		line-height: var(--height);
-	}
-}
-
-@keyframes change {
-  0%, 12.66%, 100% {
-    transform:translate3d(0,0,0);
-  }
-  33.32%,45.98% {
-    transform:translate3d(0,-50%,0);
-  }
-  66.64%,79.3% {
-    transform:translate3d(0,-50%,0);
-  }
-}

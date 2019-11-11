@@ -18,6 +18,13 @@ import "../styles/style.scss"
 // add concatenated locale data
 addLocaleData([...en, ...de]);
 
+if (typeof window !== 'undefined') {
+  // Make scroll behavior of internal links smooth
+  // eslint-disable-next-line global-require
+  require('smooth-scroll')('.jsSmoothScroll');
+}
+
+
 class Layout extends Component {
   constructor(props) {
     super(props);
@@ -33,6 +40,7 @@ class Layout extends Component {
     // at the moment this assumes that langKey will provide us
     // with the appropriate language code
     this.i18nMessages = require(`../data/messages/${this.langKey}`);
+
   }
   render() {
     return (
@@ -42,7 +50,11 @@ class Layout extends Component {
 
       >
         <main className="page">
-         <TopBar langsMenu={this.langsMenu} locale={this.langKey}  />
+         <TopBar
+          langsMenu={this.langsMenu}
+          locale={this.langKey}
+          menu={this.props.menu}
+         />
           {this.children}
         </main>
 

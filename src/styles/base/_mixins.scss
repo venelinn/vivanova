@@ -13,6 +13,17 @@
 	white-space: nowrap;
 }
 
+// Fluid Type Logic
+// 14px - minimum size at the smallest viewport width of 300px
+// 26px - maximum size at the largest viewport width of 1600px
+// font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+
+// min, max, letter spacing
+@mixin fluid-type($min, $max, $ls: 0) {
+  font-size: calc(#{$min}px + (#{$max} - #{$min}) * ((100vw - 320px) / (1600 - 320)));
+  letter-spacing: $ls;
+}
+
 @mixin arrow($width, $color, $direction, $showContent: true) {
 	@if $showContent {
 		content: '';

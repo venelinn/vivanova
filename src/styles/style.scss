@@ -21,13 +21,13 @@ body {
  */
 
 a {
-	color: #000;
+	color: inherit;
 	transition: all 0.3s ease-in-out;
 }
 a:hover,
 a:focus,
 a:active {
-	color: var(--base-color);
+	color: var(--color-base);
 	outline: 0;
 }
 
@@ -45,20 +45,16 @@ h2, h3, h4, h5, h6{
 }
 
 h2 {
-	text-transform: uppercase;
-	color: var(--base-color);
-	letter-spacing: .2rem;
-	white-space: nowrap;
-	font-size: inherit;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: var(--fw-light);
+  @include fluid-type(20, 30);
 }
 
 h3 {
-	@media (min-width: $smedium + 1) {
-		font-size: 2rem;
-	}
-	@media (max-width: $smedium) {
-		font-size: 1.5rem;
-	}
+  @include fluid-type(16, 20);
+  font-weight: var(--fw-light);
+  color: rgba(var(--color-base), 0.8);;
 }
 
 .button {
@@ -66,17 +62,14 @@ h3 {
   text-align: center;
   white-space: nowrap;
   display: inline-block;
-  letter-spacing: .2rem;
-  font-weight: bold;
-  border-radius: 44px;
-	text-transform: uppercase;
+  border-radius: 2px;
 	font-size: .85rem;
-	border: 3px solid transparent;
-	padding: 1rem 2rem;
+	border: 1px solid transparent;
+  padding: .7rem 2rem;
+  background-color: transparent;
 	&:hover,
 	&:focus {
-		border-color: var(--base-color);
-		color: var(--base-color);
+    background-color: rgba(255, 255, 255, 0.05);
 	}
 }
 
