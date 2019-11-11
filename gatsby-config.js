@@ -12,6 +12,7 @@ module.exports = {
     keywords: `architect`,
     author: `@venelin`,
     fbId: `969485113198945`,
+    shareImage: '${__dirname}/images/share.jpg', // Open Graph Default Share Image. 1200x1200 is recommended
     imageWidth: '1398',
     imageHeight: '927',
     languages
