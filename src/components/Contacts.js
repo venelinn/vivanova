@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade';
 import { FormattedMessage } from 'react-intl';
+import { injectIntl, intlShape } from 'react-intl';
 //import 'whatwg-fetch'
 
 import "./Contacts.scss"
@@ -145,4 +146,9 @@ class Contacts extends React.Component {
   }
 }
 
-export default Contacts
+
+Contacts.propTypes = {
+  intl: intlShape.isRequired
+}
+
+export default injectIntl(Contacts)

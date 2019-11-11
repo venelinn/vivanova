@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Fade from 'react-reveal/Fade';
 import Nav from './Nav'
-import logo from '../../images/logo.png'
+import logo from '../../images/logo.svg'
 
 import "./topnav.scss"
 

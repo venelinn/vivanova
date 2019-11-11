@@ -16,9 +16,10 @@
 }
 
 
-.folio-item {
-
-
+.ril__image,
+.ril__imagePrev,
+.ril__imageNext {
+	transition: transform .3s ease;
 }
 
 
@@ -26,7 +27,7 @@
 	display: block;
 	position: relative;
 	cursor: pointer;
-	@media (min-width: $smedium + 1) {
+	@media (hover: hover) {
 		overflow: hidden;
 		&:before {
 			transition: all 0.5s ease-in-out;
@@ -55,6 +56,9 @@
 			transition: all .5s ease-in-out;
 			transform: scale(1);
 		}
+	}
+	@media (hover: none) {
+		text-align: center;
 	}
 }
 

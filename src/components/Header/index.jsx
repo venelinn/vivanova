@@ -7,7 +7,6 @@ import styles from './index.module.scss';
 import './header.scss';
 
 const Header = props => {
-  console.log(props.menu);
   return (
     <section className={`${styles.intro} ${styles.introGradient}`}>
       <Hero data={props.header.modules[0]} />

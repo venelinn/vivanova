@@ -72,8 +72,9 @@
 .intro__msg {
 	margin-bottom: 0;
 	text-transform: uppercase;
-
-	//text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+	@media (max-width: $smedium) {
+		font-size: 80%;
+	}
 }
 
 .intro__content {
@@ -130,23 +131,27 @@
 .fade__text {
 	overflow: hidden;
 	height: var(--height);
-  margin: 2rem 0;
+
   text-transform: uppercase;
   font-weight: 100;
-  white-space: nowrap;
+	white-space: nowrap;
+	@include fluid-type(35, 60);
 	@media (min-width: $smedium + 1) {
-    font-size: 4.5rem;
     --height: 60px;
-    width: 650px;
+		width: 650px;
+		margin: 2rem 0;
 	}
 	@media (max-width: $smedium) {
 		--height: 35px;
+		width: 320px;
+		margin: 1.5rem 0;
 	}
 	span {
 		line-height: var(--height);
     position: absolute;
     display: block;
-    width: 100%;;
+		transform: translateX(-50%);
+    left: 50%;
     animation-name: fade;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
