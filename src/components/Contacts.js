@@ -98,14 +98,16 @@ class Contacts extends React.Component {
           <Fade bottom>
           <p className="form-field">
             <label>
-              <span><FormattedMessage id="formName" /></span>
+              <span>{this.props.intl.formatMessage({ id: "formName" })}</span>
               <input
                 value={this.state.name}
                 onChange={this.handleInputChange}
                 required
                 name="name"
                 type="text"
-                placeholder="Name" minLength="2" />
+                minLength="2"
+                placeholder={this.props.intl.formatMessage({ id: "formName" })}
+              />
             </label>
           </p>
           <p className="form-field">
@@ -122,10 +124,10 @@ class Contacts extends React.Component {
           </p>
           <p className="form-field">
             <label>
-              <span><FormattedMessage id="formMessage" /></span>
+              <span>{this.props.intl.formatMessage({ id: "formMessage" })}</span>
               <textarea
                 name="message"
-                placeholder="Message"
+                placeholder={this.props.intl.formatMessage({ id: "formMessage" })}
                 value={this.state.message}
                 onChange={this.handleInputChange}
                 required
@@ -134,7 +136,7 @@ class Contacts extends React.Component {
             </label>
           </p>
           <p className="form-field">
-            <button className="submitform" type="submit"><FormattedMessage id="formSend" /></button>
+            <button className="submitform" type="submit">{this.props.intl.formatMessage({ id: "formSend" })}</button>
           </p>
           </Fade>
           <Modal visible={this.state.showModal}>

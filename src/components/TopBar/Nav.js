@@ -22,10 +22,10 @@ const TopNav = props => {
       {/* <Hamburger /> */}
       <div className="mobile-menu">
         <a>
-          <span class="ham__icon">
-            <span class="ham__icon__line"></span>
-            <span class="ham__icon__line"></span>
-            <span class="ham__icon__line"></span>
+          <span className="ham__icon">
+            <span className="ham__icon__line"></span>
+            <span className="ham__icon__line"></span>
+            <span className="ham__icon__line"></span>
           </span>
         </a>
         </div>

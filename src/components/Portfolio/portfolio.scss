@@ -96,14 +96,9 @@
 		padding: 0 2rem;
 		font-size: 1.3rem;
 	}
-	@media (max-width: $medium) {
-		font-size: .8rem;
-	}
 	@media (min-width: $smedium + 1) {
-		color: var(--color-brand)
-	}
-	@media (max-width: $smedium) {
-		font-weight: normal;
+		color: var(--color-brand);
+		font-size: 1.1rem;
 	}
 }
 

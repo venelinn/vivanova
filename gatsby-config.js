@@ -72,5 +72,22 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Vivanova`,
+        short_name: `Vivanova`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#000000`,
+        description: `Architect`,
+        display: `minimal-ui`,
+        lang: `en-US`,
+        icon: `${__dirname}/src/images/favicons/favicon-32x32.png`,  // This path is relative to the root of the site.
+      },
+    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.app/offline
+    'gatsby-plugin-offline',
   ],
 }
