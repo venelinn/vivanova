@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade';
 import Nav from './Nav'
 import logo from '../../images/logo.png'
 
-import "./topNav.scss"
+import "./topnav.scss"
 
 class TopBar extends Component {
   constructor (props) {
