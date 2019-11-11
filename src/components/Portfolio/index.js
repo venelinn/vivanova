@@ -12,7 +12,7 @@ const nextIndex = state => (state.index + state.images.length + 1) % state.image
 class Portfolio extends Component {
   constructor(props) {
     const items = props.folio.projects;
-    const fullSize = items.map(item => item.image.fluid)
+    const fullSize = items.map(item => item.image.fluid.src)
     super(props)
 
     this.state = {
@@ -37,10 +37,10 @@ class Portfolio extends Component {
   }
 
   renderLightBox() {
-    const { images } = this.state
+    const { images } = this.state;
     return (
       <Lightbox
-        mainSrc={images[this.state.index].src}
+        mainSrc={images[this.state.index]}
         nextSrc={images[nextIndex(this.state)]}
         prevSrc={images[prevIndex(this.state)]}
         onCloseRequest={this.closeLightbox}
@@ -73,9 +73,6 @@ class Portfolio extends Component {
   }
 
   render() {
-    // const {
-    //   //imgClass = '',
-    // } = this.props
     //console.log(this.state.box.map(item => item));
     return (
       <React.Fragment>
