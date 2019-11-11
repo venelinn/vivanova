@@ -27,8 +27,13 @@ a {
 a:hover,
 a:focus,
 a:active {
-	color: var(--color-base);
+	color: inherit;
 	outline: 0;
+}
+
+::selection {
+	background: var(--color-brand);
+	color: #fff;
 }
 
 /**
