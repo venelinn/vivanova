@@ -21,14 +21,12 @@ const TopNav = props => {
       </ul>
       {/* <Hamburger /> */}
       <div className="mobile-menu">
-        <a>
-          <span className="ham__icon">
-            <span className="ham__icon__line"></span>
-            <span className="ham__icon__line"></span>
-            <span className="ham__icon__line"></span>
-          </span>
-        </a>
-        </div>
+        <span className="ham__icon">
+          <span className="ham__icon__line"></span>
+          <span className="ham__icon__line"></span>
+          <span className="ham__icon__line"></span>
+        </span>
+      </div>
 
     </nav>
   );
