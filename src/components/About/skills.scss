@@ -1,0 +1,63 @@
+/**
+ * skillbars
+ * -------------------------------------------------------------------
+ */
+ .about__skills {
+	list-style: none;
+	margin: 4rem 0 2rem;
+	li {
+		height: .4rem;
+		background: #a1a1a1;
+		width: 100%;
+		margin-bottom: 4rem;
+		padding: 0;
+		position: relative;
+		strong {
+			position: absolute;
+			left: 0;
+			top: -2.4rem;
+			color: #313131;
+			font-family: inherit;
+			font-weight: bold;
+			text-transform: uppercase;
+			line-height: 2rem;
+			@include breakpoint($smedium + 1) {
+				letter-spacing: .1rem;
+			}
+		}
+	}
+	.progress {
+		background: #313131;
+		position: relative;
+		height: 100%;
+		span {
+			position: absolute;
+			right: 0;
+			top: -2.1rem;
+			display: block;
+			color: #fff;
+			font-size: .7rem;
+			line-height: 1;
+			background: #313131;
+			padding: .4rem .4rem;
+			border-radius: 3px;
+			&:after {
+				position: absolute;
+				left: 50%;
+				bottom: -5px;
+				margin-left: -5px;
+				border-right: 5px solid transparent;
+				border-left: 5px solid transparent;
+				border-top: 5px solid #313131;
+				content: "";
+			}
+		}
+	}
+}
+//$unit: %;
+$spaceamounts: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100);
+@each $space in $spaceamounts {
+	.percent#{$space} {
+	  width: percentage($space / 100) ;
+	}
+}
