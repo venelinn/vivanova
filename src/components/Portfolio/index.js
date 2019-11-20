@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 //import PropTypes from 'prop-types'
+import Fade from 'react-reveal/Fade'
 import Img from 'gatsby-image'
 import Lightbox from 'react-image-lightbox'
 import 'react-image-lightbox/style.css'
@@ -76,30 +77,32 @@ class Portfolio extends Component {
     //console.log(this.state.box.map(item => item));
     return (
       <React.Fragment>
-        <div className="portfolio">
-          <div className="stack">
-            {this.state.box.map((thumb, index) => {
-              return (
-                <div className="bgrid folio-item"  key={index}>
-                  <div
-                    className='folio-item__link'
-                    type='button'
-                    key={index}
-                    onClick={() => this.openLightBox(index)}
-                  >
-                    <Img fixed={thumb.image.fixed} width={thumb.image.fixed.width} height={thumb.image.fixed.height}  />
-                    <span className='folio-item-table'>
-                      <span className='folio-item-cell'>
-                        <h3 className='folio-title'>{thumb.name}</h3>
-                        <span className='folio-types'>{thumb.type}</span>
+          <div className="portfolio">
+          <Fade cascade bottom duration={1000} delay={500}>
+            <div className="stack">
+              {this.state.box.map((thumb, index) => {
+                return (
+                  <div className="bgrid folio-item"  key={index}>
+                    <div
+                      className='folio-item__link'
+                      type='button'
+                      key={index}
+                      onClick={() => this.openLightBox(index)}
+                    >
+                      <Img fixed={thumb.image.fixed} width={thumb.image.fixed.width} height={thumb.image.fixed.height}  />
+                      <span className='folio-item-table'>
+                        <span className='folio-item-cell'>
+                          <h3 className='folio-title'>{thumb.name}</h3>
+                          <span className='folio-types'>{thumb.type}</span>
+                        </span>
                       </span>
-                    </span>
+                    </div>
                   </div>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
+          </Fade>
           </div>
-        </div>
         {this.state.isOpen && this.renderLightBox()}
       </React.Fragment>
     )

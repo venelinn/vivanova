@@ -8,13 +8,13 @@ import './about.scss';
 const About = props => {
   return (
     <>
-      <Fade delay={500}>
-      <div
-        className='about__intro'
-        dangerouslySetInnerHTML={{
-          __html: props.about.content.childContentfulRichText.html
-        }}
-      />
+      <Fade cascade bottom duration={1000} delay={500}>
+        <div
+          className='about__intro'
+          dangerouslySetInnerHTML={{
+            __html: props.about.content.childContentfulRichText.html
+          }}
+        />
         <Img
           className='about__img'
           fluid={props.about.modules[0].image.fluid}

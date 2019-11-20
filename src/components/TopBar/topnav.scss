@@ -1,12 +1,25 @@
 .top-nav__root {
+  @media (min-width: $medium + 1) {
+    --topHeight: 66px;
+  }
+  @media (max-width: $medium) {
+    --topHeight: 40px;
+  }
   position: fixed;
   top: var(--top, 0);
   left: 0;
   right: 0;
-  transition: top 0.5s;
+  transition: top 0.5s, background .3s;
   background-color: rgba(255,255,255, 1);
   z-index: 1;
   box-shadow: 0 2px 3px 0px rgba(0,0,0,.05);
+  &--out {
+    --top: calc(var(--topHeight) * -1);
+  }
+  &--in {
+    //background-color: rgba(0,0,0, .7);
+  }
+
 }
 
 .top-nav {
@@ -21,7 +34,7 @@
   align-items: center;
   padding: .5rem 1rem;
   &__logo {
-    height: 50px;
+    height: calc(var(--topHeight) - 15px);
     img {
       height: 100%;
     }

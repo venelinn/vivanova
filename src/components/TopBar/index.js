@@ -23,9 +23,11 @@ class TopBar extends Component {
           || (maxScroll <= 0 && prevScrollPos > currentScrollPos)
           || (prevScrollPos <= 0 && currentScrollPos <= 0)
           ) {
-          navBar.style.top = "0";
+          navBar.classList.remove('top-nav__root--out');
+          //navBar.classList.add('top-nav__root--in');
         } else {
-          navBar.style.top = "-5.0rem"; // adjustable based your need
+          navBar.classList.add('top-nav__root--out');
+          //navBar.classList.remove('top-nav__root--in');
         }
         prevScrollPos = currentScrollPos;
       }
@@ -38,7 +40,7 @@ class TopBar extends Component {
         <div id="navbar" className="top-nav__root jsNavBar">
           <div className="top-nav">
             <div className="top-nav__logo">
-              <Link to="/"><img src={logo} alt="Victoria Ivanova" /></Link>
+              <Link to="/"><img src={logo} alt="" /></Link>
             </div>
             <div className="topnav__menu">
               <Nav

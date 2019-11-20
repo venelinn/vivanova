@@ -35,17 +35,6 @@
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
-	.h1 {
-		color: rgba(255,255,255,1);
-    line-height: 1.071;
-    margin-top: 0;
-    margin-bottom: .6rem;
-    margin-left: auto;
-    margin-right: auto;
-    text-transform: uppercase;
-    text-shadow: 0 0 20px rgba(0,0,0,.5);
-    font-size: calc(16px + 3vw);
-	}
 	a {
 		color: rgba(255, 255, 255, 0.8);
     border-color: rgba(255, 255, 255, 0.3);
@@ -139,7 +128,7 @@
 	@media (min-width: $smedium + 1) {
     --height: 60px;
 		width: 650px;
-		margin: 2rem 0;
+		margin: 5rem 0;
 	}
 	@media (max-width: $smedium) {
 		--height: 35px;
