@@ -57,7 +57,7 @@
 }
 
 .intro__cta {
-	li {
+  li {
 		+ li {
 			.button {
 				border-left-color: transparent;
@@ -69,68 +69,11 @@
 	}
 }
 
-.intro__msg {
-	margin-bottom: 0;
-	text-transform: uppercase;
-	@media (max-width: $smedium) {
-		font-size: 80%;
-	}
-}
 
-.intro__content {
-	h1 {
-	    transition: all .3s ease-in-out;
-	}
-	.button {
-		&:hover,
-		&:focus {
-			&:before,
-	    	&:after {
-	    		background-color: var(--color-base);
-	    	}
-		}
-	}
-}
-
-/*! @{target: critical} */
-.intro__position {
-	text-transform: uppercase;
-	letter-spacing: .1rem;
-	color: rgba(255, 255, 255, 0.7);
-	display: flex;
-	justify-content: center;
-	//text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-	margin: 0 1rem 4em;
-	span {
-		+ span {
-			&:before {
-				content: "|";
-				text-align: center;
-				display: inline-block;
-				color: rgba(0, 0, 0, 0.3);
-			}
-
-		}
-	}
-	@media (min-width: $smedium + 1) {
-		font-size: 1.2rem;
-		span + span:before {
-			padding: 0 1.3rem;
-	  }
-  }
-  @media (max-width: $smedium) {
-    font-size: .9rem;
-    line-height: 2rem;
-    flex-wrap: wrap;
-    span + span:before {
-      padding: 0 .9rem;
-	  }
-  }
-}
 
 .fade__text {
 	overflow: hidden;
-	height: var(--height);
+  height: var(--height);
 
   text-transform: uppercase;
   font-weight: 100;

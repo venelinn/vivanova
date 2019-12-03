@@ -3,8 +3,9 @@
   top: var(--top, 0);
   left: 0;
   right: 0;
-  transition: top 0.5s;
-  background-color: rgba(255,255,255, 1);
+  transition: top 0.5s, background .3s;
+  //background-color: rgba(255,255,255, 1);
+  background-color: transparent;
   z-index: 1;
   box-shadow: 0 2px 3px 0px rgba(0,0,0,.05);
 }
@@ -20,6 +21,7 @@
   justify-content: space-between;
   align-items: center;
   padding: .5rem 1rem;
+  color: rgba(255,255,255, .8);
   &__logo {
     height: 50px;
     img {

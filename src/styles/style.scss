@@ -44,6 +44,19 @@ h2, h3, h4, h5, h6{
 	margin-bottom: 1.5rem;
 }
 
+h1 {
+  font-size: calc(16px + 5vw);
+  text-transform: uppercase;
+  font-weight: 100;
+  white-space: nowrap;
+  @media (min-width: $smedium + 1) {
+    margin: 4rem 0;
+	}
+	@media (max-width: $smedium) {
+		margin: 1.5rem 0;
+	}
+}
+
 h2 {
   white-space: nowrap;
   text-transform: uppercase;
@@ -61,12 +74,58 @@ h3 {
 	text-decoration: none;
   text-align: center;
   white-space: nowrap;
-  display: inline-block;
+  display: inline-flex;
   border-radius: 2px;
-	font-size: .85rem;
-	border: 1px solid transparent;
+	border: 0;
   padding: .7rem 2rem;
   background-color: transparent;
+  position: relative;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 90%;
+  color: var(--color-btn, inherit);
+  transition: color 0.3s linear, background-color 0.3s linear;
+  &:before {
+    content:'';
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--bgr-btn, transparent);
+    z-index: -1;
+    border-radius: 44px;
+    transition: transform .3s cubic-bezier(.4,0,0,1);
+    border-width: 1px;
+    border-color: var(--border-btn, transparent);
+    border-style: solid;
+  }
+  &:hover {
+    &:before {
+      transform: scale(1.1)
+    }
+  }
+  &--full {
+    --color-btn: #fff;
+    &:before {
+      --bgr-btn: var(--color-text) ;
+    }
+  }
+  &--no-text {
+    --height: 50px;
+    --padding: 0;
+    width: var(--height);
+    justify-content: center;
+    svg {
+      margin: 0;
+      top: 0 !important;
+    }
+  }
+  &--white {
+    &:before {
+      --bgr-btn: #fff;
+    }
+  }
 	&:hover,
 	&:focus {
     background-color: rgba(255, 255, 255, 0.05);
