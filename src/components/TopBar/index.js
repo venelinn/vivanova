@@ -7,7 +7,7 @@ import Nav from './Nav'
 import "./topnav.scss";
 
 const Logo = props => {
-  const { color } = props;
+  //const { color } = props;
   return (
     <svg width="89.5" height="50.9" viewBox="0 0 89.5 50.9">
       <g>

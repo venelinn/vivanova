@@ -38,6 +38,7 @@
     "react-pose": "^4.0.9",
     "react-reveal": "^1.2.2",
     "react-slick": "^0.24.0",
+    "react-visibility-sensor": "^5.1.1",
     "slash": "^2.0.0",
     "slick-carousel": "^1.8.1",
     "smooth-scroll": "^16.1.0",

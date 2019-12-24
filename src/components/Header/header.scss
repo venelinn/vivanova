@@ -30,6 +30,7 @@
 	a {
 		color: rgba(255, 255, 255, 0.8);
     border-color: rgba(255, 255, 255, 0.3);
+    font-weight: 800;
     @media (max-width: $small) {
       padding: .7rem 1.5rem;
       letter-spacing: .1rem;
@@ -57,12 +58,79 @@
 .intro__cta {
   animation: text-in 3s both var(--text-in);
   animation-delay: 1750ms;
-  font-weight: bold;
+  font-weight: 800;
   font-size: 100%;
   .button {
     &:before {
       --bgr-btn: var(--color-brand);
       opacity: .6;
     }
+  }
+}
+
+.animation {
+  display: inline-block;
+  animation: fadeIn 1.5s forwards;
+  opacity: 0;
+  transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.first {
+  display: inline-block;
+  animation: firstSpan 1.5s forwards cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  //background: #333;
+}
+
+.oh {
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.second {
+  animation: secondSpan 1.5s forwards cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  font-weight: 100;
+  z-index: -1;
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes firstSpan {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes secondSpan {
+  0% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(-0%);
   }
 }
