@@ -4,23 +4,27 @@
  *
  * -------------------------------------------------------------------
  */
+ @custom-media --viewport-medium (width >= 801px);
 
  .grid--about {
-   display: grid;
-   justify-items: center;
-   margin: 0 auto;
-  }
+	display: grid;
+	justify-items: center;
+  margin: 0 auto;
+}
 
-  .about__intro {
-
+.about__intro {
   max-width: var(--page-max-width);
   text-align: center;
-  @media (min-width: $smedium + 1) {
+  @media (--viewport-medium) {
+    //margin-block: 0;
     margin: 1rem auto 4rem;
   }
-	@media (max-width: $smedium) {
+  /* @media (min-width: $smedium + 1) {
+    margin: 1rem auto 4rem;
+  } */
+	/* @media (max-width: $smedium) {
     margin: 1rem auto 3rem;
-  }
+  } */
   h4 {
 		 margin-bottom: 0px;
 		 margin: 2rem 0 1rem;
@@ -42,8 +46,8 @@
 }
 
 .about__img {
-	@media (min-width: $medium + 1) {
+	/* @media (min-width: $medium + 1) {
 		max-width: 800px;
 		margin: 0 auto;
-	}
+	} */
 }

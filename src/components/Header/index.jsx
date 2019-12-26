@@ -5,13 +5,13 @@ import { FormattedMessage } from 'react-intl';
 
 import './header.scss';
 
-const Header = props => {
-  const name = props.header.title.split(' ');
+const Header = ({header}) => {
+  const name = header.title.split(' ');
   return (
     <section className="intro intro--gradient">
-      <Hero data={props.header.modules[0]} />
+      <Hero data={header.modules[0]} />
       <div className="intro__content">
-          <span className="intro__msg">{props.header.description}</span>
+          <span className="intro__msg">{header.description}</span>
           <div className="title__wrap">
             <h1>
             <span className="animation">

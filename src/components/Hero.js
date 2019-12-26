@@ -7,12 +7,12 @@ import Plx from 'react-plx'
 
 const Hero = props => {
   return (
-    <div className="hero">
+    <div className="hero jsHero">
       <Plx
         parallaxData={[
           {
             start: 1,
-            duration: '.hero',
+            duration: '.jsHero',
             properties: [
               {
                 startValue: 1,

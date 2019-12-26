@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 //import PropTypes from 'prop-types'
+import Fade from 'react-reveal/Fade'
 import Img from 'gatsby-image'
 import Lightbox from 'react-image-lightbox'
 import 'react-image-lightbox/style.css'
@@ -12,7 +13,7 @@ const nextIndex = state => (state.index + state.images.length + 1) % state.image
 class Portfolio extends Component {
   constructor(props) {
     const items = props.folio.projects;
-    const fullSize = items.map(item => item.image.fluid)
+    const fullSize = items.map(item => item.image.fluid.src)
     super(props)
 
     this.state = {
@@ -37,10 +38,10 @@ class Portfolio extends Component {
   }
 
   renderLightBox() {
-    const { images } = this.state
+    const { images } = this.state;
     return (
       <Lightbox
-        mainSrc={images[this.state.index].src}
+        mainSrc={images[this.state.index]}
         nextSrc={images[nextIndex(this.state)]}
         prevSrc={images[prevIndex(this.state)]}
         onCloseRequest={this.closeLightbox}
@@ -73,13 +74,11 @@ class Portfolio extends Component {
   }
 
   render() {
-    // const {
-    //   //imgClass = '',
-    // } = this.props
     //console.log(this.state.box.map(item => item));
     return (
-      <React.Fragment>
-        <div className="portfolio">
+      <>
+       <div className="portfolio">
+        <Fade cascade bottom duration={1000} delay={500}>
           <div className="stack">
             {this.state.box.map((thumb, index) => {
               return (
@@ -102,9 +101,10 @@ class Portfolio extends Component {
               )
             })}
           </div>
-        </div>
-        {this.state.isOpen && this.renderLightBox()}
-      </React.Fragment>
+        </Fade>
+      </div>
+      {this.state.isOpen && this.renderLightBox()}
+      </>
     )
   }
 }

@@ -4,10 +4,17 @@
   left: 0;
   right: 0;
   transition: top 0.5s, background .3s;
-  //background-color: rgba(255,255,255, 1);
-  background-color: transparent;
+  background-color: var(--bgr, transparent);
   z-index: 1;
-  box-shadow: 0 2px 3px 0px rgba(0,0,0,.05);
+  color: var(--color);
+  [data-style="dark"] & {
+    --color: rgba(255,255,255, .8);
+  }
+  [data-style="light"] & {
+    --color: rgba(0,0,0,.8);
+    --bgr: #fff;
+    box-shadow: 0 2px 3px 0px rgba(0,0,0,.05);
+  }
 }
 
 .top-nav {
@@ -21,12 +28,12 @@
   justify-content: space-between;
   align-items: center;
   padding: .5rem 1rem;
-  color: rgba(255,255,255, .8);
+  color: inherit;
   &__logo {
     height: 50px;
-    img {
-      height: 100%;
-    }
+  }
+  .logo__line {
+    fill: var(--color);
   }
   a {
     &:hover {

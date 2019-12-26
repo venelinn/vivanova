@@ -16,8 +16,8 @@ const Section = ({ children, className, title, description, ...props }) => (
         <h3>{description}</h3>
       ) : ''}
       </Fade>
+      {children}
     </div>
-    {children}
   </section>
 );
 
