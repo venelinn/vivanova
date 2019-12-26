@@ -24,7 +24,6 @@ if (typeof window !== 'undefined') {
   require('smooth-scroll')('.jsSmoothScroll');
 }
 
-
 class Layout extends Component {
   constructor(props) {
     super(props);
