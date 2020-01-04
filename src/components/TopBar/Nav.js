@@ -1,33 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import Hamburger from './Hamburger';
 import SelectLanguage from './SelectLanguage'
 
-const TopNav = props => {
+const TopNav = ({menu, langsMenu}) => {
   return (
     <nav className="nav nav-metas">
       <span className="is-accessible">Meta navigation</span>
       <ul>
-        {props.menu.map((item, index) => {
+        {menu.map((item, index) => {
           return (
-            <li key={index}>
+            <li key={index} className="animated">
               <a href={`#${item.slug}`} className="jsSmoothScroll">{item.slug}</a>
             </li>
           )
         })}
-        <li className="langbar">
-          <SelectLanguage langsMenu={props.langsMenu} />
+        <li className="langbar animated">
+          <SelectLanguage langsMenu={langsMenu} />
         </li>
       </ul>
-      {/* <Hamburger /> */}
-      <div className="mobile-menu">
-          <span className="ham__icon">
-            <span className="ham__icon__line"></span>
-            <span className="ham__icon__line"></span>
-            <span className="ham__icon__line"></span>
-          </span>
-        </div>
-
     </nav>
   );
 };

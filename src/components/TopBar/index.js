@@ -6,7 +6,7 @@ import Nav from './Nav'
 
 import "./topnav.scss";
 
-const Logo = props => {
+const Logo = () => {
   //const { color } = props;
   return (
     <svg width="89.5" height="50.9" viewBox="0 0 89.5 50.9">
@@ -38,6 +38,10 @@ const Logo = props => {
 class TopBar extends Component {
   constructor (props) {
     super(props);
+    this.state = {
+      overlay: false,
+      active: false
+    }
 
     // https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
     if (typeof window !== 'undefined') {
@@ -60,19 +64,46 @@ class TopBar extends Component {
     }
   }
 
+  mobileMenu = () => {
+    this.setState(prevState => ({
+      overlay: !prevState.overlay
+    }));
+    this.setState({
+      active: true
+    });
+  }
+
   render () {
+    //const { overlay, active } = this.state;
     return (
       <Fade>
-        <div id="navbar" className="top-nav__root jsNavBar">
+        { /*<div id="navbar" className={`top-nav__root jsNavBar ${overlay ? 'lock' : ''}`}>
+          <div className={`top-nav ${overlay ? 'overlay-on' : 'overlay-off '} ${active ? 'overlay-active' : ''} `}> */}
+          <div id="navbar" className="top-nav__root jsNavBar">
           <div className="top-nav">
             <div className="top-nav__logo">
               <Link to="/"><Logo /></Link>
             </div>
             <div className="topnav__menu">
-              <Nav
-                locale={this.props.locale}
-                menu={this.props.menu}
-                langsMenu={this.props.langsMenu} />
+              {/* <div className="mobile-menu">
+                <span
+                  className="ham__icon"
+                  onClick={this.mobileMenu}
+                  aria-label="Menu"
+                  role="button"
+                  aria-controls="navigation"
+                  >
+                  <span className="ham__icon__line"></span>
+                  <span className="ham__icon__line"></span>
+                  <span className="ham__icon__line"></span>
+                </span>
+              </div> */}
+              { this.props.menu && (
+                <Nav
+                  locale={this.props.locale}
+                  menu={this.props.menu}
+                  langsMenu={this.props.langsMenu} />
+              )}
             </div>
           </div>
         </div>

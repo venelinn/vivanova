@@ -15,6 +15,9 @@
     --bgr: #fff;
     box-shadow: 0 2px 3px 0px rgba(0,0,0,.05);
   }
+  &.lock {
+    top: 0 !important;
+  }
 }
 
 .top-nav {
@@ -25,10 +28,15 @@
   font-size: 70%;
   font-weight: $bold;
   text-transform: uppercase;
-  justify-content: space-between;
   align-items: center;
   padding: .5rem 1rem;
   color: inherit;
+  @media (min-width: $medium + 1) {
+    justify-content: space-between;
+  }
+  @media (max-width: $medium) {
+    justify-content: center;
+  }
   &__logo {
     height: 50px;
   }
@@ -40,20 +48,24 @@
       color: var(--color-brand);
     }
   }
+
   ul {
     @media (min-width: $medium + 1) {
       display: flex;
     }
     @media (max-width: $medium) {
-     display: none;
+     display: grid;
+     grid-gap: 1rem;
     }
   }
   li {
-    position: relative;
-    &:not(:first-child) {
-      &:before {
-        content: '\2022';
-        margin: 0 .5rem;
+    @media (min-width: $medium + 1) {
+      position: relative;
+      &:not(:first-child) {
+        &:before {
+          content: '\2022';
+          margin: 0 .5rem;
+        }
       }
     }
   }
@@ -85,6 +97,9 @@
   transition-property: width;
   transition-timing-function: ease-in;
   transition-duration: .3s;
+  .overlay-on & {
+    --size: 100%;
+  }
   @media (hover: hover) {
     :hover > &:nth-child(even) {
       width: var(--size);
@@ -98,3 +113,81 @@
     }
   }
 }
+
+
+.nav {
+  @media (max-width: $medium) {
+    display: none;
+    // font-size: 2.5rem;
+    // .overlay-off & {
+    // }
+   }
+}
+
+.overlay-active {
+  @media (max-width: $medium) {
+    &:before {
+      content: '';
+      position: fixed;
+      top:0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      background-color: #000;
+      z-index: 1;
+    }
+    .mobile-menu {
+      z-index: 3;
+      position: relative;
+    }
+    .nav {
+      z-index: 2;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-weight: 100;
+    }
+  }
+}
+
+.overlay-active {
+  &.overlay-off {
+    &:before {
+      animation: slide-out 1s both var(--text-in);
+      animation-delay: 1250ms;
+    }
+    .animated {
+      animation: text-out 1s both var(--text-in);
+      &.nav {
+        animation-delay: 750ms;
+      }
+    }
+  }
+}
+.overlay-on {
+  @media (max-width: $medium) {
+    &:before {
+      animation: slide-in 1s both var(--text-in);
+    }
+  }
+
+  .animated {
+    animation: text-in 1.5s both var(--text-in);
+    &.title {
+      animation-delay: 250ms;
+    }
+    &.top-nav__nav {
+      animation-delay: 500ms;
+    }
+    &.social__root {
+      animation-delay: 750ms;
+    }
+  }
+}
+
+

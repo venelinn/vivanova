@@ -31,6 +31,15 @@ a:active {
 	outline: 0;
 }
 
+button {
+	border: 0;
+	background: none;
+	outline: none;
+	padding: 0;
+	-webkit-appearance: button;
+}
+
+
 ::selection {
 	background: var(--color-brand);
 	color: #fff;
@@ -220,40 +229,6 @@ h3 {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.text-center {
-	text-align: center;
-}
-
-.text-left {
-	text-align: left;
-}
-
-.text-right {
-	text-align: right;
-}
-
-.pull-left {
-	float: left;
-}
-
-.pull-right {
-	float: right;
-}
-
-.align-center {
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-}
-
-button {
-	border: 0;
-	background: none;
-	outline: none;
-	padding: 0;
-	-webkit-appearance: button;
-}
-
 .sr-only {
 	position:absolute;
 	width:1px;
@@ -265,6 +240,16 @@ button {
 	border:0
 }
 
+
+.page__404 {
+  text-align: center;
+  .top-nav {
+    justify-content: center;
+  }
+  .content {
+    margin-top: 8rem;
+  }
+}
 
 /**
  * loader animation

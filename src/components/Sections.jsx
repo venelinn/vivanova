@@ -56,7 +56,6 @@ const Head = ({ isVisible, header }) => {
 
 const Sections = ({header, sections, social}) => {
   const { windowHeight } = useWindowSize();
-  console.log(windowHeight);
   return (
     <>
     <GlobalStyle />
