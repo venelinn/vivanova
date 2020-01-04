@@ -69,6 +69,11 @@ export const query = graphql`
           name
           url
           icon
+          file {
+            file {
+              url
+            }
+          }
         }
       }
     }
