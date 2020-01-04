@@ -1,4 +1,10 @@
 .top-nav__root {
+  @media (min-width: $medium + 1) {
+    --topHeight: 66px;
+  }
+  @media (max-width: $medium) {
+    --topHeight: 40px;
+  }
   position: fixed;
   top: var(--top, 0);
   left: 0;
@@ -7,6 +13,7 @@
   background-color: var(--bgr, transparent);
   z-index: 1;
   color: var(--color);
+
   [data-style="dark"] & {
     --color: rgba(255,255,255, .8);
   }
@@ -14,6 +21,9 @@
     --color: rgba(0,0,0,.8);
     --bgr: #fff;
     box-shadow: 0 2px 3px 0px rgba(0,0,0,.05);
+  }
+  &--out {
+    --top: calc(var(--topHeight) * -1);
   }
   &.lock {
     top: 0 !important;
