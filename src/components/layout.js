@@ -53,6 +53,7 @@ class Layout extends Component {
           langsMenu={this.langsMenu}
           locale={this.langKey}
           menu={this.props.menu}
+          cv={this.props.cv}
          />
           {this.children}
         </main>

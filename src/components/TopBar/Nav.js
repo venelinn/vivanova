@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import SelectLanguage from './SelectLanguage'
 
-const TopNav = ({menu, langsMenu}) => {
+const TopNav = ({menu, langsMenu, cv}) => {
   return (
     <nav className="nav nav-metas">
       <span className="is-accessible">Meta navigation</span>
@@ -14,6 +14,9 @@ const TopNav = ({menu, langsMenu}) => {
             </li>
           )
         })}
+        <li>
+          <a href={cv[0].file.file.url}>{cv[0].name}</a>
+        </li>
         <li className="langbar animated">
           <SelectLanguage langsMenu={langsMenu} />
         </li>

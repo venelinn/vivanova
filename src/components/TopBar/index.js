@@ -102,6 +102,7 @@ class TopBar extends Component {
                 <Nav
                   locale={this.props.locale}
                   menu={this.props.menu}
+                  cv={this.props.cv}
                   langsMenu={this.props.langsMenu} />
               )}
             </div>

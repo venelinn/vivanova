@@ -16,12 +16,15 @@ class IndexPageEn extends React.Component {
     const sections = this.props.data.sectionsDataEn.edges[0].node;
     const socialData = this.props.data.socialEn.edges;
     const menu = this.props.data.sectionsDataEn.edges[0].node.modules.map(item => item);
+    const socialArray = this.props.data.socialEn.edges.map(item => item.node);
+    const cv = socialArray.filter(a => a.name === 'CV');
     //console.log(this.props.data.sectionsDataEn.edges[0].node.modules.map(item => item));
     return (
       <Layout
         data={this.props.data}
         location={this.props.location}
         menu={menu}
+        cv={cv}
         >
         <Sections
           header={intro}
