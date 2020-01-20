@@ -1,32 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SelectLanguage from './SelectLanguage'
+//import SelectLanguage from './SelectLanguage'
 
-const TopNav = ({menu, langsMenu, cv}) => {
+const TopNav = ({menu}) => {
   return (
     <nav className="nav nav-metas">
       <span className="is-accessible">Meta navigation</span>
       <ul>
         {menu.map((item, index) => {
           return (
-            <li key={index} className="animated">
-              <a href={`#${item.slug}`} className="jsSmoothScroll">{item.slug}</a>
+            <li key={index}>
+              { (item.name === item.href) ? (
+                <a href={`#${item.name}`} className="jsSmoothScroll">{item.name}</a>
+               ) : (
+                <a href={`${item.href}`} target="_blank" rel="noopener noreferrer">{item.name}</a>
+               )}
             </li>
           )
         })}
-        <li>
-          <a href={cv[0].file.file.url}>{cv[0].name}</a>
-        </li>
-        <li className="langbar animated">
-          <SelectLanguage langsMenu={langsMenu} />
-        </li>
       </ul>
     </nav>
   );
 };
 
 TopNav.propTypes = {
-  locale: PropTypes.string
+  locale: PropTypes.array
 }
 
 export default TopNav;

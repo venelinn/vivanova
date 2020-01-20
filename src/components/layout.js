@@ -42,6 +42,14 @@ class Layout extends Component {
 
   }
   render() {
+    const menu3 = this.langsMenu.map((item) => {
+      return {
+        name: item.langKey,
+        href: item.link,
+        active: item.selected
+      }
+    })
+    const menu = [...this.props.menu, ...menu3].filter(item => !item.active);
     return (
       <IntlProvider
         locale={this.langKey}
@@ -50,10 +58,8 @@ class Layout extends Component {
       >
         <main className="page">
          <TopBar
-          langsMenu={this.langsMenu}
           locale={this.langKey}
-          menu={this.props.menu}
-          cv={this.props.cv}
+          menu={menu}
          />
           {this.children}
         </main>

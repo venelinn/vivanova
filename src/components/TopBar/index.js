@@ -46,9 +46,10 @@ class TopBar extends Component {
     // https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
     if (typeof window !== 'undefined') {
       let prevScrollPos = window.pageYOffset;
-      window.onscroll = function () {
+      window.onscroll = () => {
         const maxScroll = document.body.clientHeight - window.innerHeight;
         const navBar = document.querySelector('.jsNavBar');
+        //console.log(this.navBar.clientHeight);
         let currentScrollPos = window.pageYOffset;
         if (
             (maxScroll > 0 && prevScrollPos > currentScrollPos && prevScrollPos <= maxScroll)
@@ -100,10 +101,7 @@ class TopBar extends Component {
               </div> */}
               { this.props.menu && (
                 <Nav
-                  locale={this.props.locale}
-                  menu={this.props.menu}
-                  cv={this.props.cv}
-                  langsMenu={this.props.langsMenu} />
+                  menu={this.props.menu} />
               )}
             </div>
           </div>

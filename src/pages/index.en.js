@@ -5,26 +5,32 @@ import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import Sections from '../components/Sections';
 
-const propTypes = {
-  data: PropTypes.object,
-  about: PropTypes.object
-}
-
 class IndexPageEn extends React.Component {
   render() {
     const intro = this.props.data.headerDataEn;
     const sections = this.props.data.sectionsDataEn.edges[0].node;
     const socialData = this.props.data.socialEn.edges;
-    const menu = this.props.data.sectionsDataEn.edges[0].node.modules.map(item => item);
+    const menu0 = this.props.data.sectionsDataEn.edges[0].node.modules.map(item => item);
     const socialArray = this.props.data.socialEn.edges.map(item => item.node);
     const cv = socialArray.filter(a => a.name === 'CV');
-    //console.log(this.props.data.sectionsDataEn.edges[0].node.modules.map(item => item));
+    const menu1 = menu0.map(item => {
+      return {
+        name: item.slug,
+        href: item.slug
+      }
+    })
+    const menu2 = cv.map(item => {
+      return {
+        name: item.name,
+        href: item.file.file.url
+      }
+    })
+    const menu = [...menu1, ...menu2];
     return (
       <Layout
         data={this.props.data}
         location={this.props.location}
         menu={menu}
-        cv={cv}
         >
         <Sections
           header={intro}
@@ -36,7 +42,13 @@ class IndexPageEn extends React.Component {
   }
 }
 
+const propTypes = {
+  data: PropTypes.object,
+  about: PropTypes.object
+}
+
 IndexPageEn.propTypes = propTypes
+
 
 export default IndexPageEn
 
