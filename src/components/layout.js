@@ -42,14 +42,21 @@ class Layout extends Component {
 
   }
   render() {
-    const menu3 = this.langsMenu.map((item) => {
+    const { menu } = this.props
+    const menuLang = this.langsMenu.map(item => {
       return {
         name: item.langKey,
         href: item.link,
         active: item.selected
       }
-    })
-    const menu = [...this.props.menu, ...menu3].filter(item => !item.active);
+    });
+
+    //const menu = [...this.props.menu, ...menu3].filter(item => item.active === true);
+    //const menu1 = menu.concat(menu3);
+
+    ///const menu1 = [...menu, ...menuLang].filter(item => !item.active);
+    let menu1 = [...menu, ...menuLang].filter(item => !item.active);
+
     return (
       <IntlProvider
         locale={this.langKey}
@@ -58,8 +65,7 @@ class Layout extends Component {
       >
         <main className="page">
          <TopBar
-          locale={this.langKey}
-          menu={menu}
+          menu={menu1}
          />
           {this.children}
         </main>

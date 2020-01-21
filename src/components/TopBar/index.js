@@ -75,6 +75,8 @@ class TopBar extends Component {
   }
 
   render () {
+    const {menu} = this.props;
+    console.log(menu);
     //const { overlay, active } = this.state;
     return (
       <Fade>
@@ -99,9 +101,9 @@ class TopBar extends Component {
                   <span className="ham__icon__line"></span>
                 </span>
               </div> */}
-              { this.props.menu && (
+              { menu && (
                 <Nav
-                  menu={this.props.menu} />
+                  menu={menu} />
               )}
             </div>
           </div>
