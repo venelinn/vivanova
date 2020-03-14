@@ -11,7 +11,7 @@ const Section = ({ children, className, title, description, ...props }) => (
     {...props}
   >
     <div className="section__inner">
-      <Fade delay={300}>
+      <Fade bottom delay={300}>
       <h2>{title}</h2>
       {description ? (
         <h3>{description}</h3>

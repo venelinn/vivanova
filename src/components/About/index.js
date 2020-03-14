@@ -8,7 +8,7 @@ import './about.scss';
 const About = props => {
   return (
     <>
-      <Fade cascade delay={500}>
+      <Fade cascade bottom delay={750}>
         <div>
           <div
             className="about__intro"
@@ -21,7 +21,7 @@ const About = props => {
             fluid={props.about.modules[0].image.fluid}
             title={props.about.title}
           />
-          <Social social={props.social} />
+          <Social delay={800} social={props.social} />
         </div>
       </Fade>
     </>

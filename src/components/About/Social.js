@@ -5,9 +5,9 @@ import Fade from 'react-reveal/Fade';
 
 import './Social.scss'
 
-const Social = ({social}) => {
+const Social = ({social, delay}) => {
   return (
-    <Fade delay={750}>
+    <Fade bottom delay={delay}>
       <div className="intro__social__root">
         <ul className="intro__social">
         {social.map((item, index) => {
