@@ -10,47 +10,32 @@ const propTypes = {
   about: PropTypes.object
 }
 
-class IndexPageEn extends React.Component {
-  render() {
-    const intro = this.props.data.headerDataDe;
-    const sections = this.props.data.sectionsDataDe.edges[0].node;
-    const socialData = this.props.data.socialDe.edges;
-    const menu0 = this.props.data.sectionsDataDe.edges[0].node.modules.map(item => item);
-    const socialArray = this.props.data.socialDe.edges.map(item => item.node);
-    const cv = socialArray.filter(a => a.name === 'CV');
-    const menu1 = menu0.map(item => {
-      return {
-        name: item.slug,
-        href: item.slug
-      }
-    })
-    const menu2 = cv.map(item => {
-      return {
-        name: item.name,
-        href: item.file.file.url
-      }
-    })
-    const menu = [...menu1, ...menu2];
-    //console.log(menu);
-    return (
-      <Layout
-        data={this.props.data}
-        location={this.props.location}
-        menu={menu}
-      >
-        <Sections
-          header={intro}
-          sections={sections}
-          social={socialData}
-        />
-      </Layout>
-    )
-  }
+const IndexPageDe = props => {
+  const intro = props.data.headerDataDe;
+  const sections = props.data.sectionsDataDe.edges[0].node;
+  const socialData = props.data.socialDe.edges;
+  const menu = props.data.sectionsDataDe.edges[0].node.modules.map(item => item);
+  const socialArray = props.data.socialDe.edges.map(item => item.node);
+  const cv = socialArray.filter(a => a.name === 'CV')
+  return (
+    <Layout
+      data={props.data}
+      location={props.location}
+      menu={menu}
+      cv={cv}
+    >
+      <Sections
+        header={intro}
+        sections={sections}
+        social={socialData}
+      />
+    </Layout>
+  )
 }
 
-IndexPageEn.propTypes = propTypes
+IndexPageDe.propTypes = propTypes
 
-export default IndexPageEn
+export default IndexPageDe
 
 export const query = graphql`
   query PageDeQuery {

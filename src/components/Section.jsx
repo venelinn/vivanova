@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from './Section.module.scss';
 import Fade from 'react-reveal/Fade';
+
+import './Section.scss';
 
 const Section = ({ children, className, title, description, ...props }) => (
   <section
     id={`${className}`}
-    className={`${styles.section} ${styles.section}--${className}`}
+    className={`section section--${className}`}
     {...props}
   >
-    <div className={`${styles.inner}`}>
+    <div className="section__inner">
       <Fade delay={300}>
       <h2>{title}</h2>
       {description ? (

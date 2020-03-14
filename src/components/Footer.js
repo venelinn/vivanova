@@ -3,7 +3,7 @@ import Fade from 'react-reveal/Fade';
 import { FormattedMessage } from 'react-intl';
 import classes from "./Footer.module.scss";
 
-const Footer = () => (
+const Footer = props => (
   <footer className={classes.footer}>
     <Fade delay={300}>
       <div className={classes.copyright}>© {new Date().getFullYear()}, <FormattedMessage id="footerText" /></div>

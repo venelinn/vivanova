@@ -46,10 +46,9 @@ class TopBar extends Component {
     // https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
     if (typeof window !== 'undefined') {
       let prevScrollPos = window.pageYOffset;
-      window.onscroll = () => {
+      window.onscroll = function () {
         const maxScroll = document.body.clientHeight - window.innerHeight;
         const navBar = document.querySelector('.jsNavBar');
-        //console.log(this.navBar.clientHeight);
         let currentScrollPos = window.pageYOffset;
         if (
             (maxScroll > 0 && prevScrollPos > currentScrollPos && prevScrollPos <= maxScroll)
@@ -75,8 +74,6 @@ class TopBar extends Component {
   }
 
   render () {
-    const {menu} = this.props;
-    console.log(menu);
     //const { overlay, active } = this.state;
     return (
       <Fade>
@@ -101,9 +98,12 @@ class TopBar extends Component {
                   <span className="ham__icon__line"></span>
                 </span>
               </div> */}
-              { menu && (
+              { this.props.menu && (
                 <Nav
-                  menu={menu} />
+                  locale={this.props.locale}
+                  menu={this.props.menu}
+                  cv={this.props.cv}
+                  langsMenu={this.props.langsMenu} />
               )}
             </div>
           </div>

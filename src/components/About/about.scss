@@ -12,18 +12,12 @@
   }
 
   .about__intro {
-
   max-width: var(--page-max-width);
   text-align: center;
-  @media (min-width: $smedium + 1) {
-    margin: 1rem auto 4rem;
-  }
-	@media (max-width: $smedium) {
-    margin: 1rem auto 3rem;
-  }
+  margin: 1rem auto 2rem;
   h4 {
-		 margin-bottom: 0px;
-		 margin: 2rem 0 1rem;
+    margin-bottom: 0px;
+    margin: 2rem 0 1rem;
   }
 }
 
@@ -45,5 +39,6 @@
 	@media (min-width: $medium + 1) {
 		max-width: 800px;
 		margin: 0 auto;
-	}
+  }
+  margin-bottom: 1rem;
 }

@@ -1,18 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 //import PropTypes from 'prop-types'
-import Fade from 'react-reveal/Fade'
-import Img from 'gatsby-image'
-import Lightbox from 'react-image-lightbox'
-import 'react-image-lightbox/style.css'
+import Fade from "react-reveal/Fade"
+import Img from "gatsby-image"
+import Lightbox from "react-image-lightbox"
+import "react-image-lightbox/style.css"
 
-import './portfolio.scss';
+import "./portfolio.scss"
 
 const prevIndex = state => (state.index - 1) % state.images.length
-const nextIndex = state => (state.index + state.images.length + 1) % state.images.length
+const nextIndex = state =>
+  (state.index + state.images.length + 1) % state.images.length
 
 class Portfolio extends Component {
   constructor(props) {
-    const items = props.folio.projects;
+    const items = props.folio.projects
     const fullSize = items.map(item => item.image.fluid.src)
     super(props)
 
@@ -38,7 +39,7 @@ class Portfolio extends Component {
   }
 
   renderLightBox() {
-    const { images } = this.state;
+    const { images } = this.state
     return (
       <Lightbox
         mainSrc={images[this.state.index]}
@@ -77,33 +78,41 @@ class Portfolio extends Component {
     //console.log(this.state.box.map(item => item));
     return (
       <>
-       <div className="portfolio">
-        <Fade cascade bottom duration={1000} delay={500}>
-          <div className="stack">
-            {this.state.box.map((thumb, index) => {
-              return (
-                <div className="bgrid folio-item"  key={index}>
+        <div className="portfolio">
+          <Fade cascade bottom duration={1000} delay={500}>
+            <div className="stack">
+              {this.state.box.map((thumb, index) => {
+                return (
                   <div
-                    className='folio-item__link'
-                    type='button'
+                    className="bgrid folio-item"
                     key={index}
-                    onClick={() => this.openLightBox(index)}
+                    data-type={thumb.type}
                   >
-                    <Img fixed={thumb.image.fixed} width={thumb.image.fixed.width} height={thumb.image.fixed.height}  />
-                    <span className='folio-item-table'>
-                      <span className='folio-item-cell'>
-                        <h3 className='folio-title'>{thumb.name}</h3>
-                        <span className='folio-types'>{thumb.type}</span>
+                    <div
+                      className="folio-item__link"
+                      type="button"
+                      key={index}
+                      onClick={() => this.openLightBox(index)}
+                    >
+                      <Img
+                        fixed={thumb.image.fixed}
+                        width={thumb.image.fixed.width}
+                        height={thumb.image.fixed.height}
+                      />
+                      <span className="folio-item-table">
+                        <span className="folio-item-cell">
+                          <h3 className="folio-title">{thumb.name}</h3>
+                          <span className="folio-types">{thumb.type}</span>
+                        </span>
                       </span>
-                    </span>
+                    </div>
                   </div>
-                </div>
-              )
-            })}
-          </div>
-        </Fade>
-      </div>
-      {this.state.isOpen && this.renderLightBox()}
+                )
+              })}
+            </div>
+          </Fade>
+        </div>
+        {this.state.isOpen && this.renderLightBox()}
       </>
     )
   }
