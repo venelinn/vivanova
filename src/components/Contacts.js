@@ -88,11 +88,11 @@ class Contacts extends React.Component {
           overlay={this.state.showModal}
           onClick={this.closeModal}
         >
-          <input type="hidden" name="form-name" value="contact" />
+          <input aria-label="form-name" type="hidden" name="form-name" value="contact" />
           <p hidden>
             <label>
               Don’t fill this out:{' '}
-              <input name="bot" onChange={this.handleInputChange} />
+              <input aria-label="bot" name="bot" onChange={this.handleInputChange} />
             </label>
           </p>
           <Fade bottom>
@@ -104,6 +104,7 @@ class Contacts extends React.Component {
                 onChange={this.handleInputChange}
                 required
                 name="name"
+                aria-label="name"
                 type="text"
                 minLength="2"
                 placeholder={this.props.intl.formatMessage({ id: "formName" })}
@@ -115,6 +116,7 @@ class Contacts extends React.Component {
               <span>Email</span>
               <input
                 name="email"
+                aria-label="email"
                 type="email"
                 value={this.state.email}
                 onChange={this.handleInputChange}
@@ -127,6 +129,7 @@ class Contacts extends React.Component {
               <span>{this.props.intl.formatMessage({ id: "formMessage" })}</span>
               <textarea
                 name="message"
+                aria-label="message"
                 placeholder={this.props.intl.formatMessage({ id: "formMessage" })}
                 value={this.state.message}
                 onChange={this.handleInputChange}

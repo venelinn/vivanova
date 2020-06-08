@@ -97,8 +97,11 @@ class Portfolio extends Component {
                     <div
                       className="folio-item__link"
                       type="button"
+                      role="button"
                       key={index}
+                      tabIndex={0}
                       onClick={() => this.openLightBox(index)}
+                      onKeyDown={() => this.openLightBox(index)}
                     >
                       <Img
                         fixed={thumb.image.fixed}
