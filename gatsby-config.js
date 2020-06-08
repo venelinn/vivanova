@@ -84,7 +84,7 @@ module.exports = {
         description: `Architect`,
         display: `minimal-ui`,
         lang: `en-US`,
-        icon: `${__dirname}/src/images/favicons/favicon-32x32.png`,  // This path is relative to the root of the site.
+        icon: `${__dirname}/src/images/vv-icon.png` // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
