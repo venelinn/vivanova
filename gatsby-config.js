@@ -3,16 +3,17 @@ require('dotenv').config({path: `./.env`});
 
 const languages = require('./src/data/languages');
 
+console.log('dirname', __dirname)
 module.exports = {
   siteMetadata: {
     title: `Victoria Ivanova • Architect`,
     description: `Architect`,
-    copyright: 'Copyright © 2019 Victoria Ivanova', // Copyright string for the RSS feed
+    copyright: `Copyright © ${new Date().getFullYear()} Victoria Ivanova`, // Copyright string for the RSS feed
     siteUrl: `https://vivanova.eu`,
     keywords: `architect`,
     author: `@venelin`,
     fbId: `969485113198945`,
-    shareImage: '${__dirname}/images/share.jpg', // Open Graph Default Share Image. 1200x1200 is recommended
+    shareImage: `${__dirname}/images/share.jpg`, // Open Graph Default Share Image. 1200x1200 is recommended
     imageWidth: '1398',
     imageHeight: '927',
     languages
