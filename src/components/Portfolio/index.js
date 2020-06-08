@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import Fade from "react-reveal/Fade"
 import Img from "gatsby-image"
 import Lightbox from "react-image-lightbox"
-import { FacebookShareButton, FacebookIcon } from 'react-share'
+//import { FacebookShareButton, FacebookIcon } from 'react-share'
 import "react-image-lightbox/style.css"
 
 import "./portfolio.scss"
@@ -55,11 +55,11 @@ class Portfolio extends Component {
         zoomInLabel="Zoom in"
         zoomOutLabel="Zoom out"
         closeLabel="Close"
-        toolbarButtons={[
-          <FacebookShareButton url={images[this.state.index]} className={'socialShareButtons'}>
-            <FacebookIcon size={32} round/>
-          </FacebookShareButton>
-      ]}
+      //   toolbarButtons={[
+      //     <FacebookShareButton url={images[this.state.index]} className={'socialShareButtons'}>
+      //       <FacebookIcon size={32} round/>
+      //     </FacebookShareButton>
+      // ]}
       />
     )
   }
