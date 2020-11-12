@@ -4,23 +4,16 @@ import { getUserLangKey } from 'ptz-i18n';
 
 import SEO from "../components/Seo"
 
-class RedirectIndex extends React.PureComponent {
-  constructor(args) {
-    super(args);
-
-    // Skip build, Browsers only
-    if (typeof window !== 'undefined') {
-      const { langs, defaultLangKey } = args.data.site.siteMetadata.languages;
-      const langKey = getUserLangKey(langs, defaultLangKey);
-      const homeUrl = withPrefix(`/${langKey}/`);
-      //console.log(args.data.site.siteMetadata.languages);
-      navigate(homeUrl);
-    }
+const RedirectIndex = props => {
+  if (typeof window !== 'undefined') {
+    const { langs, defaultLangKey } = props.data.site.siteMetadata.languages;
+    const langKey = getUserLangKey(langs, defaultLangKey);
+    const homeUrl = withPrefix(`/${langKey}/`);
+    navigate(homeUrl);
   }
-
-  render() {
-    return (<SEO title="Victoria Ivanova" />);
-  }
+  return (
+    <SEO title="Victoria Ivanova" />
+  )
 }
 
 export default RedirectIndex;
