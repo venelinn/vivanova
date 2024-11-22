@@ -65,12 +65,6 @@ module.exports = {
     `@contentful/gatsby-transformer-contentful-richtext`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: ""
-    //   },
-    // },
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
     {
